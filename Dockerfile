@@ -16,6 +16,7 @@ RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime \
   tzdata \
   && locale-gen ${LANG} \
   && update-locale LC_ALL=${LC_ALL} LANG=${LANG} \
+  && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 ENV DEBIAN_FRONTEND=
